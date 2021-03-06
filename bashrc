@@ -40,5 +40,3 @@ man() {
     command man "$@"
 }
 
-neofetch
-echo "Hey Sexy Hackerman!!!"
