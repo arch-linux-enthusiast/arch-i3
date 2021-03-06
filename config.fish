@@ -1,6 +1,6 @@
 set EDITOR vim
 set BROWSER firefox
-clipmenud &
+#clipmenud &
 alias yt-d="youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] -o '%(title)s.%(ext)s'"
 alias mirrorlist-update='sudo reflector --verbose --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist'
 alias grep='grep --color=auto'
