@@ -263,6 +263,7 @@ mode "$mode_gaps_outer" {
 exec clipmenud 
 exec volumeicon 
 exec polybar example
+exec flameshot
 
 
 ### Quick Resize windows with Ctrl+$mod keys ###
