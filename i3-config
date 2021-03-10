@@ -189,6 +189,7 @@ bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+v exec code
 bindsym $mod+Control+l exec i3lock-fancy
 bindsym $mod+Control+v exec clipmenu
+bindsym $mod+b exec --no-startup-id dmenu-bluetooth
 
 ### End of custom shortcuts ###
 
@@ -262,3 +263,10 @@ mode "$mode_gaps_outer" {
 exec clipmenud 
 exec volumeicon 
 exec polybar example
+
+
+### Quick Resize windows with Ctrl+$mod keys ###
+bindsym $mod+Ctrl+Right resize shrink width 1 px or 1 ppt
+bindsym $mod+Ctrl+Up resize grow height 1 px or 1 ppt
+bindsym $mod+Ctrl+Down resize shrink height 1 px or 1 ppt
+bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt

@@ -420,4 +420,10 @@ screenchange-reload = true
 margin-top = 5
 margin-bottom = 5
 
+[module/bluetooth]
+type = custom/script
+exec = dmenu-bluetooth --status
+interval = 1
+click-left = dmenu-bluetooth &
+
 ; vim:ft=dosini
