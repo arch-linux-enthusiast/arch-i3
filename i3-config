@@ -264,6 +264,7 @@ exec clipmenud
 exec volumeicon 
 exec polybar example
 exec flameshot
+exec blueman-applet
 
 
 ### Quick Resize windows with Ctrl+$mod keys ###
