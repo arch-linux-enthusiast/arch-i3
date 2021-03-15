@@ -203,7 +203,7 @@ for_window [class="^.*"] border pixel 2
 # Set inner/outer gaps
 gaps inner 8
 gaps outer 5
-gaps top 35
+gaps top 15
 gaps bottom 10
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
@@ -260,11 +260,11 @@ mode "$mode_gaps_outer" {
 ###End of i3-gaps config
 
 
-exec clipmenud 
-exec volumeicon 
-exec polybar example
-exec flameshot
-exec blueman-applet
+exec --no-startup-id clipmenud 
+#exec volumeicon 
+#exec polybar example
+#exec flameshot
+exec --no-startup-id  blueman-applet
 
 
 ### Quick Resize windows with Ctrl+$mod keys ###
@@ -276,5 +276,5 @@ bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt
 ### End of Resize windows with Ctrl+$mod keys ###
 
 ### Screenshot capture with flameshot ###
-bindsym Print exec flameshot full -p ~/Pictures/Screenshots/
-bindsym Shift+Print exec flameshot gui
+#bindsym Print exec flameshot full -p ~/Pictures/Screenshots/
+#bindsym Shift+Print exec flameshot gui
