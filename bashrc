@@ -19,7 +19,13 @@ alias vhosts="sudo vim /etc/hosts"
 alias brsource="source ~/.bashrc"
 alias install="sudo pacman -S"
 alias remove="sudo pacman -Rns"
-alias git-push="git commit -a && git push"
+alias p="poweroff"
+alias r="reboot"
+alias pt="ping -c 3 8.8.8.8"
+alias e="exit"
+alias c="clear"
+
+
 
 function _update_ps1() {
     PS1=$(powerline-shell $?)
@@ -28,6 +34,7 @@ function _update_ps1() {
 if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
+
 
 #export PAGER="/usr/bin/most -s"
 man() {
@@ -41,6 +48,5 @@ man() {
 }
 
 
-export BROWSER=/bin/firefox
-clipmenud &
-fish
+export QT_QPA_PLATFORMTHEME=qt5ct
+
