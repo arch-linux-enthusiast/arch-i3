@@ -1,0 +1,15 @@
+#Next and previous images
+next_img C-Right L
+prev_img C-Left H
+
+#Move around image
+scroll_up Up k
+scroll_down Down j
+scroll_left Left h
+scroll_right Right l
+
+#Zoom
+zoom_in plus
+zoom_out minus
+zoom_default d
+zoom_fit s
