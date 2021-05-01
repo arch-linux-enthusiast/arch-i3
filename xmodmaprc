@@ -1,2 +1,4 @@
 keycode 135 = Super_R
 keycode 108 = backslash
+keycode 66 = Escape
+keycode 9 = Caps_Lock
