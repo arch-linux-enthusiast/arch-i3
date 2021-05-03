@@ -28,7 +28,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -41,7 +41,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty  # i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -177,19 +177,22 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-	tray_output none
-	mode invisible
-	position top
-        status_command i3status
-}
+#bar {
+	#tray_output none
+	#mode invisible
+	#position top
+        #status_command i3status
+#}
 
 ### Custom shortcuts ###
 bindsym $mod+Shift+f exec firefox
+bindsym $mod+Mod1+c exec chromium --disable-gpu-driver-bug-workarounds 
 bindsym $mod+Shift+v exec code
-bindsym $mod+Mod1+l exec i3lock-fancy
+bindsym $mod+Control+Shift+v exec virt-manager
+bindsym $mod+Control+r exec kitty ranger
+bindsym $mod+Control+l exec i3lock-fancy
 bindsym $mod+Control+v exec clipmenu
-bindsym $mod+b exec --no-startup-id dmenu-bluetooth
+#bindsym $mod+b exec --no-startup-id dmenu-bluetooth
 
 ### End of custom shortcuts ###
 
@@ -203,7 +206,7 @@ for_window [class="^.*"] border pixel 2
 # Set inner/outer gaps
 gaps inner 8
 gaps outer 5
-gaps top 15
+gaps top 10
 gaps bottom 10
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
@@ -259,28 +262,55 @@ mode "$mode_gaps_outer" {
 
 ###End of i3-gaps config
 
+### Startup Applications ###
 
+#exec --no-startup-id keepass
 exec --no-startup-id clipmenud 
 #exec volumeicon 
 #exec polybar example
 #exec flameshot
-#exec --no-startup-id  blueman-applet
+#exec blueman-applet
+exec --no-startup-id dunst
+exec --no-startup-id mate-polkit
+exec --no-startup-id xclock -digital -update 1
+exec --no-startup-id xclock -update 1
+exec --no-startup-id redshift -l 22.56263:88.36304 
 
+### End of startup applications ###
 
 ### Quick Resize windows with Ctrl+$mod keys ###
-bindsym $mod+Ctrl+l resize shrink width 1 px or 1 ppt
-bindsym $mod+Ctrl+j resize grow height 1 px or 1 ppt
-bindsym $mod+Ctrl+k resize shrink height 1 px or 1 ppt
-bindsym $mod+Ctrl+h resize grow width 1 px or 1 ppt
+bindsym $mod+Ctrl+Right resize shrink width 1 px or 1 ppt
+bindsym $mod+Ctrl+Up resize grow height 1 px or 1 ppt
+bindsym $mod+Ctrl+Down resize shrink height 1 px or 1 ppt
+bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt
 
 ### End of Resize windows with Ctrl+$mod keys ###
 
 ### Screenshot capture with flameshot ###
-bindsym Print exec flameshot full -p ~/Pictures/Screenshots/
-bindsym Shift+Print exec flameshot gui
+bindsym Print exec --no-startup-id flameshot full -p ~/Pictures/Screenshots/ 
+bindsym Shift+Print exec --no-startup-id flameshot gui 
+
+
+
+
+### i3 + Plasma ###
+
+# Don’t treat Plasma pop-ups as full-sized windows
+#for_window [class="plasmashell"] floating enable
+
+# Don’t spawn an empty window for the Plasma Desktop
+#for_window [title="Desktop — Plasma"] kill, floating enable, border none
+
+### i3 + Plasma End ###
+
+
+
+
+### Wallpaper with Feh ###
+exec --no-startup-id feh --recursive --bg-fill --randomize ~/Pictures/Wallpapers/wallpapers/Landscapes/* 
 
 
 ### Brightness control ###
-bindsym XF86MonBrightnessUp exec sudo light -A 10     # increase screen brightness
-bindsym XF86MonBrightnessDown exec sudo light -U 10   # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A 10     # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U 10   # decrease screen brightness
 ### Brightness control ###
