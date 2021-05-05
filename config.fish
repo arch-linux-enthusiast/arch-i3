@@ -3,9 +3,6 @@ set fish_greeting ""
 set -g fish_cursor_insert line blink
 set -g fish_cursor_default line blink
 
-set EDITOR vim
-export EDITOR=vim
-
 
 #Youtube-dl aliases
 alias yt-d="youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] -o '%(title)s.%(ext)s'"
@@ -24,6 +21,7 @@ alias yi="yay -S"
 alias Q="pacman -Q"
 alias q="pacman -Qqe"
 alias m="pacman -Qm"
+alias Qg="pacman -Q | grep"
 
 
 #Documents & configs aliases
@@ -57,10 +55,11 @@ alias gcd="cd ~/GitHub/arch-i3"
 #systemd shortcuts
 alias stt="systemctl status"
 alias sta="sudo systemctl start"
-alias stp="alias systemctl stop"
+alias stp="sudo systemctl stop"
 alias b="bluetoothctl"
 alias brs="sudo systemctl restart bluetooth.service"
 
 
 #Other Shortcuts
 alias Tlj=" cd ~/Music/Sea\ Songs/The\ Longest\ Johns/ && vlc *"
+alias fb="feh --recursive --bg-fill --randomize ~/Pictures/Wallpapers/wallpapers/Landscapes/* & disown && exit"
