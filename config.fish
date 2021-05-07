@@ -58,8 +58,12 @@ alias sta="sudo systemctl start"
 alias stp="sudo systemctl stop"
 alias b="bluetoothctl"
 alias brs="sudo systemctl restart bluetooth.service"
+alias sen="sudo systemctl enable"
+alias sdi="sudo systemctl disable"
 
 
 #Other Shortcuts
 alias Tlj=" cd ~/Music/Sea\ Songs/The\ Longest\ Johns/ && vlc *"
 alias fb="feh --recursive --bg-fill --randomize ~/Pictures/Wallpapers/wallpapers/Landscapes/* & disown && exit"
+alias t="transmission-cli (ls) -w (pwd)"
+alias rf="rm -rf"

@@ -1,5 +1,11 @@
-#xrandr -s 1366x768
-#xwallpaper --stretch ~/Downloads/house_lake.jpg
-dunst &
-feh --recursive --bg-fill --randomize /media/sf_wallpapers/Landscapes 
+#export DESKTOP_SESSION=plasma
+#exec startplasma-x11
+
+xmodmap ~/.xmodmap-`uname -n`
+xmodmap ~/.xmodmaprc
+xinput set-prop 11 313 1
+xinput set-prop 11 321 1
+xrdb -merge ~/.Xresources
+val $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
 exec i3
