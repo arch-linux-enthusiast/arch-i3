@@ -7,6 +7,9 @@ set nu
 "Show commands in normal mode at bottom of window
 set showcmd
 
+"Highlight searches
+set hlsearch
+
 "Auto execute code with python
 autocmd FileType python map <buffer> <F12> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F12> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
