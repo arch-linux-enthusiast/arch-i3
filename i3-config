@@ -28,7 +28,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-#exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -41,10 +41,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty  # i3-sensible-terminal
+bindsym $mod+Return exec xfce4-terminal # i3-sensible-terminal
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
@@ -175,24 +175,14 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-	#tray_output none
-	#mode invisible
-	#position top
-        #status_command i3status
-#}
 
 ### Custom shortcuts ###
 bindsym $mod+Shift+f exec firefox
-bindsym $mod+Mod1+c exec chromium --disable-gpu-driver-bug-workarounds 
+bindsym $mod+c exec chromium --disable-gpu-driver-bug-workarounds --pasword-store=gnome
+bindsym $mod+Control+c exec chromium --incognito
 bindsym $mod+Shift+v exec code
-bindsym $mod+Control+Shift+v exec virt-manager
-bindsym $mod+Control+r exec kitty ranger
-bindsym $mod+Control+l exec i3lock-fancy
+bindsym $mod+n exec xfce4-terminal -e ranger
 bindsym $mod+Control+v exec clipmenu
-#bindsym $mod+b exec --no-startup-id dmenu-bluetooth
 
 ### End of custom shortcuts ###
 
@@ -275,8 +265,11 @@ exec --no-startup-id mate-polkit
 exec --no-startup-id xclock -digital -update 1
 exec --no-startup-id xclock -update 1
 exec --no-startup-id redshift -l 22.56263:88.36304 
+#exec --no-startup-id nm-applet
 
 ### End of startup applications ###
+
+
 
 ### Quick Resize windows with Ctrl+$mod keys ###
 bindsym $mod+Ctrl+Right resize shrink width 1 px or 1 ppt
@@ -287,8 +280,8 @@ bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt
 ### End of Resize windows with Ctrl+$mod keys ###
 
 ### Screenshot capture with flameshot ###
-bindsym Print exec --no-startup-id flameshot full -p ~/Pictures/Screenshots/ 
-bindsym Shift+Print exec --no-startup-id flameshot gui 
+bindsym --release Print exec --no-startup-id full-screenshot
+bindsym --release Shift+Print exec --no-startup-id area-screenshot
 
 
 
@@ -314,3 +307,9 @@ exec --no-startup-id feh --recursive --bg-fill --randomize ~/Pictures/Wallpapers
 bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A 10     # increase screen brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U 10   # decrease screen brightness
 ### Brightness control ###
+
+
+
+###Polybar startup script###
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+###Polybar startup script###
