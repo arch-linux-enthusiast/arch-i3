@@ -2,7 +2,7 @@
 set nu
 
 "Get defaults most users want
-"source $VIMRUNTIME/defaults.vim
+source $VIMRUNTIME/defaults.vim
 
 "Show commands in normal mode at bottom of window
 set showcmd
@@ -26,3 +26,6 @@ set tabstop=4              " Number of spaces tab is counted for.
 set shiftwidth=4           " Number of spaces to use for autoindent.
 
 colorscheme murphy         " Change a colorscheme.
+
+packloadall                " Load all plugins
+silent! helptags ALL       " Load help files for all plugins

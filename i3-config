@@ -300,7 +300,7 @@ bindsym --release Shift+Print exec --no-startup-id area-screenshot
 
 
 ### Wallpaper with Feh ###
-exec --no-startup-id feh --recursive --bg-fill --randomize ~/Pictures/Wallpapers/wallpapers/Landscapes/* 
+exec --no-startup-id feh --recursive --bg-fill --randomize ~/pictures/Wallpapers/wallpapers/Landscapes/* 
 
 
 ### Brightness control ###

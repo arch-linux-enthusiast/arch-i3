@@ -27,10 +27,11 @@ alias Qg="pacman -Q | grep"
 #Documents & configs aliases
 alias brc="vim ~/.bashrc"
 alias h="sudo vim /etc/hosts"
-alias u="vim Documents/Arch\ Linux/Common\ Unicode\ Charactars.txt"
+alias u="vim ~/documents/Arch\ Linux/Common\ Unicode\ Charactars.txt"
 alias f="vim ~/.config/fish/config.fish"
 alias i="vim ~/.config/i3/config"
 alias fs="source ~/.config/fish/config.fish"
+alias v="vim ~/.vimrc"
 
 
 #System shortcuts
@@ -47,9 +48,10 @@ alias pt="ping -c 3 8.8.8.8"
 
 #Git shortcuts
 alias gp="git commit -a && git push"
-alias gf="cat ~/.config/fish/config.fish > ~/GitHub/arch-i3/config.fish"
-alias gi="cat ~/.config/i3/config > ~/GitHub/arch-i3/i3-config"
-alias gcd="cd ~/GitHub/arch-i3"
+alias gf="cat ~/.config/fish/config.fish > ~/github/arch-i3/config.fish"
+alias gi="cat ~/.config/i3/config > ~/github/arch-i3/i3-config"
+alias gcd="cd ~/github/arch-i3"
+alias gv="cat ~/.vimrc > ~/github/arch-i3/vimrc"
 
 
 #systemd shortcuts
@@ -57,13 +59,16 @@ alias stt="systemctl status"
 alias sta="sudo systemctl start"
 alias stp="sudo systemctl stop"
 alias b="bluetoothctl"
-alias brs="sudo systemctl restart bluetooth.service"
+alias br="sudo systemctl restart bluetooth.service"
 alias sen="sudo systemctl enable"
 alias sdi="sudo systemctl disable"
 
 
 #Other Shortcuts
-alias Tlj=" cd ~/Music/Sea\ Songs/The\ Longest\ Johns/ && vlc *"
-alias fb="feh --recursive --bg-fill --randomize ~/Pictures/Wallpapers/wallpapers/Landscapes/* & disown && exit"
+alias fb="feh --recursive --bg-fill --randomize ~/pictures/Wallpapers/wallpapers/Landscapes/* & disown && exit"
 alias t="transmission-cli (ls) -w (pwd)"
 alias rf="rm -rf"
+alias wr="wifi off && wifi on"
+
+function fish_mode_prompt
+end
