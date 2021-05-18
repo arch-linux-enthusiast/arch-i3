@@ -27,7 +27,7 @@ alias Qg="pacman -Q | grep"
 #Documents & configs aliases
 alias brc="vim ~/.bashrc"
 alias h="sudo vim /etc/hosts"
-alias u="vim ~/documents/Arch\ Linux/Common\ Unicode\ Charactars.txt"
+alias u="vim ~/documents/arch/unicode.txt"
 alias f="vim ~/.config/fish/config.fish"
 alias i="vim ~/.config/i3/config"
 alias fs="source ~/.config/fish/config.fish"
