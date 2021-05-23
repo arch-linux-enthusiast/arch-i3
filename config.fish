@@ -22,12 +22,12 @@ alias Q="pacman -Q"
 alias q="pacman -Qqe"
 alias m="pacman -Qm"
 alias Qg="pacman -Q | grep"
+alias u="yes | sudo pacman -Syu && yes N | yay"
 
 
 #Documents & configs aliases
 alias brc="vim ~/.bashrc"
 alias h="sudo vim /etc/hosts"
-alias u="vim ~/documents/arch/unicode.txt"
 alias f="vim ~/.config/fish/config.fish"
 alias i="vim ~/.config/i3/config"
 alias fs="source ~/.config/fish/config.fish"
@@ -58,10 +58,14 @@ alias gv="cat ~/.vimrc > ~/github/arch-i3/vimrc"
 alias stt="systemctl status"
 alias sta="sudo systemctl start"
 alias stp="sudo systemctl stop"
-alias b="bluetoothctl"
 alias br="sudo systemctl restart bluetooth.service"
 alias sen="sudo systemctl enable"
 alias sdi="sudo systemctl disable"
+
+
+#Bluetooth shortcuts
+alias bs='echo -e "power on\n scan on\n connect B8:0F:B7:FB:39:18\n scan off" | bluetoothctl'
+alias b='echo -e "power on\n scan on" | bluetoothctl && bluetoothctl'
 
 
 #Other Shortcuts
@@ -70,5 +74,10 @@ alias t="transmission-cli (ls) -w (pwd)"
 alias rf="rm -rf"
 alias wr="wifi off && wifi on"
 
+
 function fish_mode_prompt
 end
+
+
+#Autojump
+if test -f /home/soumyadeep/.autojump/share/autojump/autojump.fish; . /home/soumyadeep/.autojump/share/autojump/autojump.fish; end
