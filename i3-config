@@ -183,8 +183,9 @@ bindsym $mod+Shift+f exec firefox
 bindsym $mod+c exec chromium --disable-gpu-driver-bug-workarounds --pasword-store=gnome
 bindsym $mod+Control+c exec chromium --incognito
 bindsym $mod+Shift+v exec code
-bindsym $mod+n exec "lxterminal -e ranger" 
+bindsym $mod+n exec lxterminal -e ranger 
 bindsym $mod+Control+v exec clipmenu
+bindsym $mod+m exec mate-calc
 
 ### End of custom shortcuts ###
 
@@ -341,3 +342,9 @@ bar {
 
 #Make mate-calc show up in far right corner of screen
 for_window [class="(?i)mate-calc"] move position 920 40
+
+
+
+#Navigate to next workspace
+bindsym Control+Shift+bracketleft workspace prev
+bindsym Control+Shift+bracketright workspace next 
