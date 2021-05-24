@@ -176,6 +176,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
+
+
 ### Custom shortcuts ###
 bindsym $mod+Shift+f exec firefox
 bindsym $mod+c exec chromium --disable-gpu-driver-bug-workarounds --pasword-store=gnome
@@ -194,10 +196,10 @@ bindsym $mod+Control+v exec clipmenu
 for_window [class="^.*"] border pixel 2
 
 # Set inner/outer gaps
-gaps inner 8
+gaps inner 5
 gaps outer 5
-gaps top 10
-gaps bottom 10
+gaps top 5
+gaps bottom 5
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -262,8 +264,8 @@ exec --no-startup-id clipmenud
 #exec blueman-applet
 exec --no-startup-id dunst
 exec --no-startup-id mate-polkit
-exec --no-startup-id xclock -digital -update 1
-exec --no-startup-id xclock -update 1
+#exec --no-startup-id xclock -digital -update 1
+#exec --no-startup-id xclock -update 1
 exec --no-startup-id redshift -l 22.56263:88.36304 
 #exec --no-startup-id nm-applet
 
@@ -315,6 +317,27 @@ bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U 10   # decrease
 ###Polybar startup script###
 
 
-#Pulseaudion bluetooth fix
+#Pulseaudio on bluetooth fix
 exec --no-startup-id pactl load-module module-bluetooth-policy
 exec --no-startup-id pactl load-module module-bluetooth-discover
+
+
+
+
+bar {
+    status_command i3blocks
+    mode dock
+    hidden_state show
+    modifier Mod4
+    position top
+    font pango:DejaVu Sans Mono 15 
+}
+
+
+#Make gnome-calculator floating and set size to 300x300
+#for_window [class="(?i)gnome-calculator"] floating enable
+#for_window [class="(?i)gnome-calculator"] resize set 300 300 
+
+
+#Make mate-calc show up in far right corner of screen
+for_window [class="(?i)mate-calc"] move position 920 40
