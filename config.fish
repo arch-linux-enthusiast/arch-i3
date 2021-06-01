@@ -12,7 +12,7 @@ alias yt-pv="youtube-dl -o '%(playlist_index)s. %(title)s.%(ext)s'"
 
 
 #Pacman and yay aliases
-alias mirrorlist-update='sudo reflector --verbose --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist'
+alias mirrorlist-update='sudo reflector --download-timeout 1 --protocol https --latest 5 --sort rate --save /etc/pacman.d/mirrorlist'
 alias S="sudo pacman -S"
 alias R="sudo pacman -Rns"
 alias se="pacman -Ss"
@@ -22,7 +22,7 @@ alias Q="pacman -Q"
 alias q="pacman -Qqe"
 alias m="pacman -Qm"
 alias Qg="pacman -Q | grep"
-alias u="yes | sudo pacman -Syu && yes N | yay"
+alias u="yes | sudo pacman -Syu && yes N | paru && mirrorlist-update"
 
 
 #Documents & configs aliases
@@ -65,7 +65,9 @@ alias sdi="sudo systemctl disable"
 
 #Bluetooth shortcuts
 alias bs='echo -e "power on\n scan on\n connect B8:0F:B7:FB:39:18\n scan off" | bluetoothctl'
+alias bh='echo -e "power on\n scan on\n connect A4:77:58:7E:48:2E\n scan off" | bluetoothctl'
 alias b='echo -e "power on\n scan on" | bluetoothctl && bluetoothctl'
+alias bp='echo -e "power off" | bluetoothctl && exit'
 
 
 #Other Shortcuts
