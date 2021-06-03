@@ -1,2 +1,2 @@
 #!/bin/sh
-cat /home/soumyadeep/.config/unimenu/characters | dmenu -i -l 20 | awk '{printf $1}' | xclip -selection clipboard 
+cat /home/$USER/.config/unimenu/characters | dmenu -i -l 20 | awk '{printf $1}' | xclip -selection clipboard 
