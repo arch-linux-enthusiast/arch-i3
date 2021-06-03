@@ -1,0 +1,35 @@
+[networkstatus]
+command=bash ~/.config/i3blocks/networkstatus.sh
+#min_width=135
+interval=1
+
+[name]
+command=bash ~/.config/i3blocks/name.sh 
+interval=repeat
+min_width=135
+align=center
+
+[time]
+command=echo "🕑$(date '+%H:%M:%S')"
+interval=1
+min_width=250
+align=center
+
+
+[memory]
+command=echo "🧠$(bash ~/.config/i3blocks/memory.sh)"
+interval=1
+
+
+[calculator]
+full_text=🧮
+command=mate-calc > /dev/null
+
+
+[date]
+command=echo "📅$(date '+%A, %d-%m-%Y')"
+interval=1
+min_width=270
+align=center
+
+
