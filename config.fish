@@ -23,6 +23,7 @@ alias q="pacman -Qqe"
 alias m="pacman -Qm"
 alias Qg="pacman -Q | grep"
 alias u="yes | sudo pacman -Syu && yes N | paru && mirrorlist-update"
+alias deps="pacman -Qq | fzf --preview 'pactree -lur {}' --layout=reverse --bind 'enter:execute(pactree -lu {} | less)'"
 
 
 #Documents & configs aliases
@@ -82,4 +83,4 @@ end
 
 
 #Autojump
-if test -f /home/soumyadeep/.autojump/share/autojump/autojump.fish; . /home/soumyadeep/.autojump/share/autojump/autojump.fish; end
+if test -f /home/$USER/.autojump/share/autojump/autojump.fish; . /home/$USER/.autojump/share/autojump/autojump.fish; end
