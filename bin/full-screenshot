@@ -5,8 +5,8 @@ echo $name
 
 if [[ "$name" == "zoom" ]]
 then
-    maim | tee /home/soumyadeep/documents/1-tuition/ayan/ss/$(date +"%d-%b-%Y--%H:%M:%S").png | xclip -selection clipboard -t image/png
+    maim | tee /home/$USER/documents/1-tuition/ayan/ss/$(date +"%d-%b-%Y--%H:%M:%S").png | xclip -selection clipboard -t image/png
 else
-    maim | tee /home/soumyadeep/pictures/ss/$(date +"%d-%b-%Y--%H:%M:%S").png | xclip -selection clipboard -t image/png
+    maim | tee /home/$USER/pictures/ss/$(date +"%d-%b-%Y--%H:%M:%S").png | xclip -selection clipboard -t image/png
 fi
 notify-send "Screenshot saved"
