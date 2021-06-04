@@ -85,7 +85,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -179,8 +179,8 @@ bindsym $mod+r mode "resize"
 
 
 ### Custom shortcuts ###
-bindsym $mod+b exec firefox
-bindsym $mod+Control+b exec firefox --private-window
+bindsym $mod+f exec firefox
+bindsym $mod+Control+f exec firefox --private-window
 bindsym $mod+Shift+v exec code
 bindsym $mod+n exec st -e ranger 
 bindsym $mod+Control+v exec clipmenu
