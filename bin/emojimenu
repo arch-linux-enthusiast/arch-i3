@@ -1,2 +1,2 @@
 #!/bin/sh
-cat /home/$USER/.config/emojimenu/emojis | dmenu -i -l 20 | awk '{printf $1}' | xclip -selection clipboard 
+cat /home/soumyadeep/.config/emojimenu/emojis | dmenu -i -l 20 | awk '{printf $1}' | xclip -selection clipboard 
