@@ -2,7 +2,8 @@
 set fish_greeting ""
 set -g fish_cursor_insert line blink
 set -g fish_cursor_default line blink
-
+#set -u PATH /home/soumyadeep/.local/bin $PATH
+set -gx fish_user_paths $HOME/.local/bin
 
 #Youtube-dl aliases
 alias yt-d="youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] -o '%(title)s.%(ext)s'"
@@ -22,7 +23,6 @@ alias Q="pacman -Q"
 alias q="pacman -Qqe"
 alias m="pacman -Qm"
 alias Qg="pacman -Q | grep"
-alias u="yes | sudo pacman -Syu && yes N | paru && mirrorlist-update"
 alias deps="pacman -Qq | fzf --preview 'pactree -lur {}' --layout=reverse --bind 'enter:execute(pactree -lu {} | less)'"
 
 
