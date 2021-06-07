@@ -1,3 +1,5 @@
+#~/.config/feh/keys
+#
 #Next and previous images
 next_img C-Right L
 prev_img C-Left H

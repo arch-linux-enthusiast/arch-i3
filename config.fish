@@ -1,3 +1,5 @@
+#~/.config/fish/config.fish
+#
 #Setting environment variables
 set fish_greeting ""
 set -g fish_cursor_insert line blink
