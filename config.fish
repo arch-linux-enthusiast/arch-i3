@@ -2,7 +2,6 @@
 set fish_greeting ""
 set -g fish_cursor_insert line blink
 set -g fish_cursor_default line blink
-#set -u PATH /home/soumyadeep/.local/bin $PATH
 set -gx fish_user_paths $HOME/.local/bin
 
 #Youtube-dl aliases
