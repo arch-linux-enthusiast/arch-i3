@@ -259,9 +259,24 @@ bindsym {
 XF86MonBrightnessDown exec light -U 10
 XF86MonBrightnessUp exec light -A 10
 
-XF86AudioRaiseVolume exec pamixer -i 10
-XF86AudioLowerVolume exec pamixer -d 10
+
+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+#XF86AudioRaiseVolume exec pamixer -i 10
+#XF86AudioLowerVolume exec pamixer -d 10
+
 XF86AudioMute exec pamixer --toggle-mute
 XF86AudioMicMute exec pamixer --default-source --toggle-mute
+}
+##########################################################################################################
+
+#Bluetooth fix
+exec --no-startup-id pactl load-module module-bluetooth-policy
+exec --no-startup-id pactl load-module module-bluetooth-discover
+##########################################################################################################
+
+#Keyboard configs
+input "1:1:AT_Translated_Set_2_keyboard" {
+    xkb_options caps:swapescape,ctrl:swap_lalt_lctl,altwin:menu_win
 }
 ##########################################################################################################
