@@ -1,5 +1,3 @@
-#~/.config/fish/config.fish
-#
 #Setting environment variables
 set fish_greeting ""
 set -g fish_cursor_insert line blink
@@ -40,7 +38,7 @@ alias v="vim ~/.vimrc"
 alias g='grep --color=auto'
 alias grep='grep --color=auto'
 alias ip='ip -color=auto'
-alias s="startx"
+alias s="sway"
 alias e="exit"
 alias p="poweroff"
 alias c="clear"
@@ -50,10 +48,10 @@ alias pt="ping -c 3 8.8.8.8"
 
 #Git shortcuts
 alias gp="git commit -a && git push"
-alias gf="cat ~/.config/fish/config.fish > ~/github/arch-i3/config.fish"
-alias gi="cat ~/.config/i3/config > ~/github/arch-i3/i3-config"
-alias gcd="cd ~/github/arch-i3"
-alias gv="cat ~/.vimrc > ~/github/arch-i3/vimrc"
+alias gf="cat ~/.config/fish/config.fish > ~/g/arch-i3/config.fish"
+alias gi="cat ~/.config/i3/config > ~/g/arch-i3/i3-config"
+alias gcd="cd ~/g/arch-i3"
+alias gv="cat ~/.vimrc > ~/g/arch-i3/vimrc"
 
 
 #systemd shortcuts
