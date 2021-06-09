@@ -4,6 +4,12 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+
+#Custom scripts
+#exec --no-startup-id ~/.local/bin/auto
+##########################################################################################################
+
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -18,12 +24,13 @@ set $term st
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu wofi --show=run | xargs swaymsg exec --
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#output * bg /home/$USER/.config/wallpaper.jpg fill
+output "*" background $(find ~/pictures/wallpapers -name '*.jpg' | shuf -n 1) fill
 #
 # Example configuration:
 #
@@ -225,7 +232,7 @@ include /etc/sway/config.d/*
 #Custom Shortcuts from i3
 
 bindsym $mod+n exec st -e ranger 
-bindsym $mod+Control+v exec clipmenu
+#bindsym $mod+Control+v exec clipmenu
 bindsym $mod+m exec mate-calc
 bindsym $mod+c exec chromium 
 bindsym $mod+Control+c exec chromium --incognito 
@@ -251,6 +258,7 @@ bindsym Print exec grim -c -t png - | tee /home/$USER/pictures/ss/$(date +"%d-%b
 ##########################################################################################################
 
 #Disable border
+#for_window [class="^.*"] border pixel 2
 default_border pixel 3
 ##########################################################################################################
 
@@ -271,12 +279,22 @@ XF86AudioMicMute exec pamixer --default-source --toggle-mute
 ##########################################################################################################
 
 #Bluetooth fix
-exec --no-startup-id pactl load-module module-bluetooth-policy
-exec --no-startup-id pactl load-module module-bluetooth-discover
+#exec --no-startup-id pactl load-module module-bluetooth-policy
+#exec --no-startup-id pactl load-module module-bluetooth-discover
 ##########################################################################################################
 
 #Keyboard configs
 input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_options caps:swapescape,ctrl:swap_lalt_lctl,altwin:menu_win
 }
+##########################################################################################################
+
+#Make mate-calc show up in far right corner of screen
+for_window [class="(?i)mate-calc"] move position 920 40
+##########################################################################################################
+
+#Clipboard history with clipman
+exec wl-paste -t text --watch clipman store
+exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
+bindsym $mod+Control+v exec clipman pick -t wofi
 ##########################################################################################################
